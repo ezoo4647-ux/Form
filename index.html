@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة تسجيل - مركز أورسيتي للتدريب</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #0088cc;
+            color: #ffffff;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        form {
+            padding: 24px 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #0088cc;
+        }
+
+        .payment-box {
+            background-color: #f8fafc;
+            border: 1px dashed #0088cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 18px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .payment-box h3 {
+            color: #0088cc;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .payment-box p {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-note {
+            background-color: #e1f5fe;
+            border-right: 4px solid #0088cc;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #01579b;
+            margin-bottom: 18px;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #006699;
+        }
+
+        .footer {
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- العنوان الرئيسي والجانبي -->
+        <div class="header">
+            <h1>مركز أورسيتي للتدريب</h1>
+            <p>استمارة تسجيل</p>
+        </div>
+
+        <!-- نموذج التسجيل -->
+        <form id="registrationForm" action="https://formspree.io/f/meaeagng" method="POST">
+            
+            <!-- معلومات الدفع -->
+            <div class="payment-box">
+                <h3>طريقة وسعر الدفع</h3>
+                <p><strong>رسوم التسجيل:</strong> 10,000 جنيه سوداني</p>
+                <p><strong>بنك الخرطوم</strong></p>
+                <p><strong>رقم الحساب:</strong> 2399314</p>
+                <p><strong>اسم الحساب:</strong> مصعب محمد علي عبدالله العبيد</p>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">الاسم الرباعي <span style="color:red;">*</span></label>
+                <input type="text" id="fullname" name="الاسم_الرباعي" placeholder="أدخل الاسم الرباعي" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">رقم الهاتف <span style="color:red;">*</span></label>
+                <input type="tel" id="phone" name="رقم_الهاتف" placeholder="أدخل رقم الهاتف" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني (اختياري)</label>
+                <input type="email" id="email" name="البريد_الإلكتروني" placeholder="example@mail.com">
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="age">العمر <span style="color:red;">*</span></label>
+                    <input type="number" id="age" name="العمر" placeholder="العمر" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">الجنس <span style="color:red;">*</span></label>
+                    <select id="gender" name="الجنس" required>
+                        <option value="" disabled selected>اختر الجنس</option>
+                        <option value="ذكر">ذكر</option>
+                        <option value="أنثى">أنثى</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="academic-level">المستوى الأكاديمي / التعليمي <span style="color:red;">*</span></label>
+                <select id="academic-level" name="المستوى_الأكاديمي" required>
+                    <option value="" disabled selected>اختر المستوى التعليمي</option>
+                    <option value="أساس">أساس</option>
+                    <option value="ثانوي">ثانوي</option>
+                    <option value="جامعي (دبلوم)">جامعي (دبلوم)</option>
+                    <option value="جامعي (بكالوريوس)">جامعي (بكالوريوس)</option>
+                    <option value="دراسات عليا">دراسات عليا</option>
+                    <option value="دكتوراه">دكتوراه</option>
+                    <option value="غيرها">غيرها</option>
+                </select>
+            </div>
+
+            <!-- إدخال رقم العملية -->
+            <div class="form-group">
+                <label for="operation-number">رقم العملية (إيصال التحويل) <span style="color:red;">*</span></label>
+                <input type="text" id="operation-number" name="رقم_العملية" placeholder="أدخل رقم العملية من إيصال الدفع" required>
+            </div>
+
+            <!-- ملاحظة إرسال الإشعار على الواتساب -->
+            <div class="whatsapp-note">
+                📌 <strong>ملاحظة هامة:</strong> يرجى إرسال إشعار أو صورة الإيصال على الواتساب: <strong>+249991741240</strong> لتأكيد التسجيل.
+            </div>
+
+            <button type="submit" class="submit-btn">إرسال البيانات</button>
+        </form>
+
+        <!-- اسم الإدارة في أسفل الصفحة -->
+        <div class="footer">
+            إدارة: معز مرتضى محمد علي
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const myPhoneNumber = "249991741240"; 
+
+            const fullname = document.getElementById('fullname').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value || 'غير مدخل';
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const academicLevel = document.getElementById('academic-level').value;
+            const operationNumber = document.getElementById('operation-number').value;
+
+            // صياغة الرسالة النصية للواتساب
+            const message = `*استمارة تسجيل جديدة - مركز أورسيتي للتدريب*%0A%0A` +
+                            `👤 *الاسم الرباعي:* ${fullname}%0A` +
+                            `📞 *رقم الهاتف:* ${phone}%0A` +
+                            `✉️ *البريد الإلكتروني:* ${email}%0A` +
+                            `🎂 *العمر:* ${age}%0A` +
+                            `🚻 *الجنس:* ${gender}%0A` +
+                            `🎓 *المستوى التعليمي:* ${academicLevel}%0A` +
+                            `💰 *رسوم التسجيل:* 10,000 جنيه سوداني%0A` +
+                            `🔢 *رقم العملية:* ${operationNumber}`;
+
+            const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${message}`;
+            
+            // فتح الواتساب تلقائياً بعد إرسال الفورم
+            setTimeout(function() {
+                window.open(whatsappUrl, '_blank');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
